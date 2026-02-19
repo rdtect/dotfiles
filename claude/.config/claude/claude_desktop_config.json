@@ -44,7 +44,7 @@
         "--custom-auth-credentials", "rdos-chroma-2026-token",
         "--ssl", "true"
       ],
-      "description": "ChromaDB semantic search at chroma.rdtect.com - 8537 chunks from Obsidian vault. Route added via Traefik."
+      "description": "ChromaDB semantic search at chroma.rdtect.com - 8680 chunks from 433 vault files. Route: Traefik → 10.0.1.12:8000"
     },
     "obsidian": {
       "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
