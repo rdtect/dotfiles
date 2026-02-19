@@ -149,6 +149,16 @@ if ! pgrep -f "socat TCP-LISTEN:22360" > /dev/null; then
 fi
 
 # ===========================================
+# MCP Server Tokens (for Claude Code)
+# ===========================================
+# GitHub MCP — get from github.com → Settings → Developer settings → Personal access tokens
+export GITHUB_TOKEN="${GITHUB_TOKEN:-}"
+
+# Obsidian MCP — NOT needed (using iansinnott/obsidian-claude-code-mcp plugin via port 22360)
+# If switching to cyanheads approach: Obsidian → Settings → Community Plugins → Local REST API
+# export OBSIDIAN_REST_API_KEY="your-key-here"
+
+# ===========================================
 # Welcome Message (must be last — after all sourcing/plugins)
 # ===========================================
 fastfetch

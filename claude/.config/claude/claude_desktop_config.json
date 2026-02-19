@@ -6,12 +6,12 @@
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       },
-      "description": "GitHub operations - PRs, issues, repos, code search"
+      "description": "GitHub operations - PRs, issues, repos, code search. Set GITHUB_TOKEN in ~/.zshrc"
     },
-    "memory": {
+    "knowledge-graph": {
       "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"],
-      "description": "Knowledge graph memory - entities, relations, persistent context"
+      "description": "Persistent knowledge graph - entities, relations, observations across sessions"
     },
     "filesystem": {
       "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
@@ -39,20 +39,17 @@
       "args": [
         "chroma-mcp",
         "--client-type", "http",
-        "--host", "localhost",
-        "--port", "8100",
-        "--custom-auth-credentials", "rdos-chroma-2026-token"
+        "--host", "chroma.rdtect.com",
+        "--port", "443",
+        "--custom-auth-credentials", "rdos-chroma-2026-token",
+        "--ssl", "true"
       ],
-      "description": "ChromaDB semantic search - 8537 chunks from Obsidian vault (504 files)"
+      "description": "ChromaDB semantic search at chroma.rdtect.com - 8537 chunks from Obsidian vault. Route added via Traefik."
     },
     "obsidian": {
       "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
-      "args": ["-y", "@cyanheads/obsidian-mcp-server"],
-      "env": {
-        "OBSIDIAN_API_KEY": "${OBSIDIAN_REST_API_KEY}",
-        "OBSIDIAN_API_URL": "http://localhost:27124"
-      },
-      "description": "Obsidian vault - search, read, write notes. Needs OBSIDIAN_REST_API_KEY from Obsidian > Settings > Local REST API"
+      "args": ["-y", "mcp-remote", "http://localhost:22360/sse"],
+      "description": "Obsidian vault via iansinnott/obsidian-claude-code-mcp plugin. Requires: 1) Plugin installed in Obsidian, 2) socat bridge running (auto-starts via .zshrc), 3) Obsidian open on Windows"
     }
   }
 }
