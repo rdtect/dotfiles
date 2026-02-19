@@ -1,0 +1,33 @@
+# Secrets (NEVER commit)
+**/.credentials.json
+**/.env
+**/*.key
+**/*.pem
+**/secrets.*
+
+# Claude Code runtime data (machine-specific, ephemeral)
+claude/.claude/history.jsonl
+claude/.claude/stats-cache.json
+claude/.claude/projects/
+claude/.claude/todos/
+claude/.claude/tasks/
+claude/.claude/teams/
+claude/.claude/debug/
+claude/.claude/file-history/
+claude/.claude/shell-snapshots/
+claude/.claude/session-env/
+claude/.claude/backups/
+claude/.claude/telemetry/
+claude/.claude/statsig/
+claude/.claude/paste-cache/
+claude/.claude/cache/
+claude/.claude/ide/
+claude/.claude/downloads/
+claude/.claude/plugins/
+
+# Shell history (too personal)
+zsh/.zsh_history
+
+# OS
+.DS_Store
+Thumbs.db

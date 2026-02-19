@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "coolify": {
+      "command": "npx",
+      "args": ["-y", "@joshuarileydev/coolify-mcp-server"],
+      "env": {
+        "COOLIFY_API_URL": "https://coolify.rdtect.com",
+        "COOLIFY_API_TOKEN": "5|rdos-coolify-mcp-2026-token",
+        "COOLIFY_TEAM_ID": "0"
+      }
+    }
+  }
+}
