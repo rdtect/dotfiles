@@ -32,39 +32,44 @@ Organize work by cognitive function:
 
 ---
 
-## SuperClaude Toolchain
+## Toolchain
 
 | Role | Tool | Purpose |
 |------|------|---------|
-| **Cortex** | Claude Code | Architect & Planner |
-| **Hands** | Neovim + Avante | Surgeon (precise edits) |
-| **Orchestrator** | Opencode CLI | Manager (task loops) |
+| **Cortex** | Claude Code (this) | Architect, planner, agent director |
+| **Editor** | VS Code / Cursor | Primary code editor |
+| **AI Services** | VPS (Ollama, n8n) | Background inference, automation |
 
 **Workflows:**
-- **Deep Work**: Plan (Claude) → Scaffold (MCP) → Refine (Avante) → Verify (tests)
-- **Quick Fix**: Identify → `opencode run "fix X"` → Review → Commit
+- **Deep Work**: Plan (Claude Code) → Implement (agents) → Review (code-reviewer) → Ship
+- **Quick Fix**: Identify → delegate to build-error-resolver → verify → commit
 
 ---
 
 ## System Environment
 
-- **OS**: Arch Linux (WSL2)
-- **Package Manager**: `pacman` (NOT apt/yum)
-- **Shell**: zsh + oh-my-zsh + powerlevel10k
-- **Editor**: neovim (primary)
-- **Languages**: Python 3.13, Node 25.x, Rust 1.91, Bun
+> **ADR-001 (2026-02-19):** Windows native is the primary dev environment. Kali WSL2 for security practice only. See `2_Rules/decisions/ADR-001-dev-environment-windows-native.md`.
+
+- **Primary OS**: Windows native (Claude Code, Node, Python, Rust, Bun)
+- **Security**: Kali WSL2 (`wsl --install kali-linux`) — pen-testing, CTF only
+- **Shell**: zsh (WSL) / PowerShell (Windows)
+- **Editor**: VS Code / Cursor
+- **Languages**: Python 3.13, Node 25.x, Rust, Bun
+- **MacBook**: Incoming primary machine — same config via dotfiles bootstrap
 
 ## Paths
 
-- **Projects**: `~/Projects/`
-- **Obsidian Vault**: `~/Projects/Personal/notes/` → `/mnt/d/rdtect`
-- **MCP Config**: `~/.config/claude/claude_desktop_config.json`
+- **Projects**: `~/Projects/` (WSL) or `C:\Users\Rick\Projects\` (Windows)
+- **Obsidian Vault**: `/mnt/d/rdtect` (WSL) → `D:\rdtect` (Windows)
+- **Dotfiles**: `github.com/rdtect/dotfiles` (GNU Stow managed)
 
-## AI Tools
+## AI Stack
 
-- **Claude Code**: Primary (this tool) - The Cortex
-- **Opencode CLI**: Task orchestration - The Orchestrator
-- **Avante.nvim**: In-editor AI - The Hands
+- **Claude Code**: Primary AI (this tool) — 12 agents, 13 commands, 6 skills
+- **Ollama on VPS**: Free/fast inference for background tasks (qwen2.5:7b)
+- **n8n on VPS**: Workflow automation, session sync
+- **ChromaDB on VPS**: Semantic memory across all knowledge
+- **Open WebUI**: Multi-model interface at ai.rdtect.com
 
 ---
 

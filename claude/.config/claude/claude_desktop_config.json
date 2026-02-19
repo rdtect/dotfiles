@@ -1,0 +1,58 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "GitHub operations - PRs, issues, repos, code search"
+    },
+    "memory": {
+      "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Knowledge graph memory - entities, relations, persistent context"
+    },
+    "filesystem": {
+      "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/rdtect",
+        "/home/rdtect/Projects",
+        "/mnt/d/rdtect"
+      ],
+      "description": "Filesystem: home, projects, and Obsidian vault (/mnt/d/rdtect)"
+    },
+    "coolify": {
+      "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
+      "args": ["-y", "@joshuarileydev/coolify-mcp-server"],
+      "env": {
+        "COOLIFY_API_URL": "https://coolify.rdtect.com",
+        "COOLIFY_API_TOKEN": "5|rdos-coolify-mcp-2026-token",
+        "COOLIFY_TEAM_ID": "0"
+      },
+      "description": "Coolify VPS management - services, apps, deployments"
+    },
+    "chroma": {
+      "command": "/usr/sbin/uvx",
+      "args": [
+        "chroma-mcp",
+        "--client-type", "http",
+        "--host", "localhost",
+        "--port", "8100",
+        "--custom-auth-credentials", "rdos-chroma-2026-token"
+      ],
+      "description": "ChromaDB semantic search - 8537 chunks from Obsidian vault (504 files)"
+    },
+    "obsidian": {
+      "command": "/home/rdtect/.nvm/versions/node/v25.2.1/bin/npx",
+      "args": ["-y", "@cyanheads/obsidian-mcp-server"],
+      "env": {
+        "OBSIDIAN_API_KEY": "${OBSIDIAN_REST_API_KEY}",
+        "OBSIDIAN_API_URL": "http://localhost:27124"
+      },
+      "description": "Obsidian vault - search, read, write notes. Needs OBSIDIAN_REST_API_KEY from Obsidian > Settings > Local REST API"
+    }
+  }
+}
