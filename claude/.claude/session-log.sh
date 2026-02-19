@@ -2,7 +2,7 @@
 # Session Logger - Writes Claude Code session summaries to Obsidian vault
 # Usage: Called by hooks or manually with session JSON via stdin
 
-VAULT_PATH="${OBSIDIAN_VAULT:-$HOME/Projects/personal/notes}"
+VAULT_PATH="${OBSIDIAN_VAULT:-/mnt/d/rdtect}"
 DAILY_DIR="$VAULT_PATH/4_Logs/daily"
 TODAY=$(date +%Y-%m-%d)
 DAILY_FILE="$DAILY_DIR/$TODAY.md"
