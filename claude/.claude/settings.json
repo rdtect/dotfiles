@@ -81,6 +81,5 @@
     "pyright-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "model": "sonnet"
+  "skipDangerousModePermissionPrompt": true
 }
